@@ -25,7 +25,7 @@ node {
     stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
             sh "docker login -u vikasvikku -p Vikas@123"
-            sh "docker tag springbootdocker:latest vikasvikku/springbootdocker:$latest"
+            sh "docker tag springbootdocker:latest vikasvikku/springbootdocker:latest"
             sh "docker push vikasvikku/springbootdocker:latest"
             echo "Image push complete"
         }
